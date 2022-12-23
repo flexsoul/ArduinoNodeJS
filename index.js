@@ -25,6 +25,8 @@ app.get('/', function (req, res) {
 parser.on('data', function (data) {
   console.log('Data:', data.toString())
   //**** **/
+  //***/ */
+  /*tert*/
 })
 
 var buttonValue = 0;
