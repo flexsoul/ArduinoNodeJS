@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>WebSockets</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Using socket.io</h1>
+        <p>This page will update with socket.io</p>
+        <button id="clicked">click me</button>
+        <div id="updates"></div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+<script>
+    var socket = io();
+    var button = document.getElementById('clicked');
+    button.onclick = function(e){
+        socket.emit('clicked message', 'clicked');
+    }
+    socket.on('clicked message', function(msg){
+       // document.getElementById('updates').innerHTML = msg;
+       console.log('Ура сервер нам что-то ответил');
+    });
+
+/*
+    var socket = io('http://localhost:3000'); // <-- ����:����
+    socket.on('connect',function () {
+    console.log('Ура соеденились!!!!');
+    });
+*/
+</script>
+</body>
+</html>
