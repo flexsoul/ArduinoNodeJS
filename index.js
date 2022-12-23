@@ -24,6 +24,7 @@ app.get('/', function (req, res) {
 // Switches the port into "flowing mode"
 parser.on('data', function (data) {
   console.log('Data:', data.toString())
+  //**** **/
 })
 
 var buttonValue = 0;
